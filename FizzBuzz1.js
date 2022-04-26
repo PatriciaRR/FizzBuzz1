@@ -2,32 +2,31 @@ console.log('Hello world!');
 
 function printStrings() {
     
-    for (let i = 1; i <= 105; i++) {
-        let displayWord = '';
+    for (let i = 1; i <= 500; i++) {
+        let displayWord = [];
         if (i % 3 === 0) {
-            displayWord += 'Fizz';
+            displayWord.push('Fizz');
         }
         if (i % 5 === 0) {
-            displayWord += 'Buzz';
+            displayWord.push('Buzz');
         }
         if (i % 7 === 0) {
-            displayWord += 'Bang';    
+            displayWord.push('Bang');    
         }
         if (i % 11 === 0) {
-            displayWord = 'Bong';
+            displayWord = ['Bong'];
         }
         if (i % 13 === 0) {
-            let indexOfB = displayWord.indexOf('B');
-            if (indexOfB === -1) { 
-                displayWord += 'Fezz'
-            } else { 
-                displayWord = displayWord.slice(0,indexOfB) + 'Fezz' + displayWord.slice(indexOfB);
-            }
+            let indexOfB = displayWord.findIndex(word => word.startsWith('B'));
+            indexOfB === -1 ? displayWord.push('Fezz') : displayWord.splice(indexOfB, 0, 'Fezz') 
+        }    
+        if (i % 17 === 0) {
+            displayWord = displayWord.reverse();
         }
-        if (displayWord === '') {
-            displayWord += i;
+        if (displayWord.length === 0) {
+            console.log(i);
         }
-        console.log(displayWord);
+        console.log(displayWord.join(''));
     } 
 }
 printStrings();

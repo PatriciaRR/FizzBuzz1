@@ -1,20 +1,20 @@
 console.log('Hello world!');
 
-function printNumbers () {
-    let displayWord = '';
+function printNumbers() {
+    
     for (let i = 1; i <= 100; i++) {
+        let displayWord = '';
         if (i % 3 === 0) {
-            displayWord = 'Fizz';
+            displayWord += 'Fizz';
         }
         if (i % 5 === 0) {
             displayWord += 'Buzz';
         }
-        else {
-            displayWord = i;
+        if (displayWord === '') {
+            displayWord += i;
         }
-    }
-    return console.log(displayWord);
+        console.log(displayWord);
+    } 
 }
-
 printNumbers();
 

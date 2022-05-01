@@ -24,7 +24,8 @@ function printStrings() {
             displayWord = displayWord.reverse();
         }
         if (displayWord.length === 0) {
-            console.log(i);
+            //console.log(i);
+            displayWord.push(i)
         }
         console.log(displayWord.join(''));
     } 
